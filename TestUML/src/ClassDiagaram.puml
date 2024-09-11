@@ -1,0 +1,62 @@
+@startuml
+skinparam classAttributeIconSize 0
+
+
+class DVD {
+-dvdID: int
+-title: String
+-runtime: int
+-pricecode: int
+-status: int
++addDVD()
+{static}+displayAvailableDVDs()
+{static}+displayUnavailableDVDs()
+{static}+displayAllDVDs()
+}
+class member
+{
+-memID: String
+-name: String
+-email: String
+-phone: int
+-eircode: int
+}
+class regularMember {
++addRegularMember()
++displayRegularMember()
+{static}+DisplayStatment(int)
+}
+
+class premiumMember {
+-frp: int
+-discount: double
++addRegularMember()
++displayRegularMember()
+{static}+DisplayStatement(int)
+}
+
+class rental {
+-rentalID: int
+-rentDate: String
+-expectedReturnDate: String
+-cost: Double
++addRental(ArrayList<>)
+}
+
+class rentalItem {
+-returnDate: String
+fineAmount: double
+
+}
+
+class DAOObject {
+
+}
+
+
+
+rentalItem -- "0..* " DVD : refers to
+rentalItem -- "1..*   "rental : consists of
+member <|-- "1..1 " regularMember
+member <|-- "1..1  " premiumMember
+@enduml
