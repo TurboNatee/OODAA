@@ -1,14 +1,13 @@
 package Quiz;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class QuizDriver {
     public static void main(String[] args) {
        // QuizQuestion Q1 = new QuizQuestion("What is the capital of France", "Paris");
         //Q1.Display();
         //System.out.println("Your Answer was: " +Q1.getAnswer() + "\nYour Answer Was "+Q1.CheckAnswer());
-        ArrayList List = new ArrayList<>();
+        ArrayList<String> List = new ArrayList<>();
         List.add("Brussels");
         List.add("Cork");
         List.add("Paris");

@@ -4,19 +4,11 @@ import java.util.ArrayList;
 
 public class MultipleChoice extends QuizQuestion {
 
-    ArrayList<String> options = new ArrayList<>();
+    ArrayList<String> options;
 
-    public MultipleChoice(String question, String answer, ArrayList options) {
+    public MultipleChoice(String question, String answer, ArrayList<String> options) {
         super(question, answer);
         this.options= options;
-    }
-
-    public ArrayList<String> getOptions() {
-        return options;
-    }
-
-    public void setOptions(ArrayList<String> options) {
-        this.options = options;
     }
 
     @Override
