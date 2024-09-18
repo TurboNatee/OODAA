@@ -1,48 +1,40 @@
 package Quiz;
 
+import java.util.ArrayList;
+
 public class MultipleChoice extends QuizQuestion {
-    private String choice1;
-    private String choice2;
-    private String choice3;
-    private String choice4;
 
-    public MultipleChoice(String question, String answer, String choice1, String choice4, String choice3, String choice2) {
+    ArrayList<String> options = new ArrayList<>();
+
+    public MultipleChoice(String question, String answer, ArrayList options) {
         super(question, answer);
-        this.choice1 = choice1;
-        this.choice4 = choice4;
-        this.choice3 = choice3;
-        this.choice2 = choice2;
+        this.options= options;
     }
 
-    public String getChoice1() {
-        return choice1;
+    public ArrayList<String> getOptions() {
+        return options;
     }
 
-    public void setChoice1(String choice1) {
-        this.choice1 = choice1;
+    public void setOptions(ArrayList<String> options) {
+        this.options = options;
     }
 
-    public String getChoice2() {
-        return choice2;
+    @Override
+    public void Display() {
+        super.Display();
+        for (int i =1;i<4;i++)
+        {
+            System.out.println("Choice" + i + ": " + options.get(i) );
+        }
     }
 
-    public void setChoice2(String choice2) {
-        this.choice2 = choice2;
-    }
-
-    public String getChoice3() {
-        return choice3;
-    }
-
-    public void setChoice3(String choice3) {
-        this.choice3 = choice3;
-    }
-
-    public String getChoice4() {
-        return choice4;
-    }
-
-    public void setChoice4(String choice4) {
-        this.choice4 = choice4;
+    @Override
+    public boolean CheckAnswer() {
+        for(int i =0;i<options.size();i++)
+        {
+            if (options.get(2).equals(getAnswer()))
+                return true;
+        }
+        return false;
     }
 }
