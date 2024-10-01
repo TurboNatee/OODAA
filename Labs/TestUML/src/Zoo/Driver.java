@@ -19,6 +19,5 @@ public class Driver {
         Sparrow S1 =new Sparrow(2,'F',15);
         Sparrow.Sleep(S1);
         Sparrow.Eat(S1);
-        Sparrow.fly(S1);
     }
 }
