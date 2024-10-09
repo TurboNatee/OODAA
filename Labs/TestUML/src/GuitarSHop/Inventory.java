@@ -6,41 +6,33 @@ import java.util.List;
 
 public class Inventory {
 
-    private List<Guitar> guitars;
+    private List<Instrument> instruments;
 
     public Inventory() {
-        guitars = new LinkedList();
+        instruments = new LinkedList();
     }
 
-    public void addGuitar(String serialNumber, double price, GuitarSpec spec) {
-        //Guitar guitar = new Guitar(serialNumber, price, model, type, builder, backwood , topwood);
-        Guitar guitar = new Guitar(serialNumber, price, spec);
-        guitars.add(guitar);
+    public void addInstrument(String serialNumber, double price, InstrumentSpec instrument) {
+
+
+
     }
 
-    public Guitar getGuitar(String serialNumber) {
-        for (Iterator i = guitars.iterator(); ((Iterator) i).hasNext(); ) {
-            Guitar guitar = (Guitar) i.next();
-            if (guitar.getSerialNumber().equals(serialNumber)) {
-                return guitar;
-            }
-        }
-        return null;
-    }
 
-    public List search(GuitarSpec Spec) {
-        List<Guitar> matchingGuitars = new LinkedList();
-        for (Iterator i = guitars.iterator(); i.hasNext(); ) {
-            Guitar guitar = (Guitar) i.next();
-            if (guitar.getSpec().matches(Spec)) {
-                matchingGuitars.add(guitar);
+
+    public List search(InstrumentSpec instrument) {
+        List<Instrument> matchingInstruments = new LinkedList();
+        for (Iterator i = instruments.iterator(); i.hasNext(); ) {
+            Instrument instruments = (Instrument) i.next();
+            if (instruments.getInstrumentSpec().matches(instrument)) {
+                matchingInstruments.add(instruments);
             }
             //ignore serialNumber since it is unique
             //ignore price since it is irrelevant
 
 
         }
-        return matchingGuitars;
+        return matchingInstruments;
     }
 
 
