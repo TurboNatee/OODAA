@@ -1,13 +1,13 @@
 package GuitarSHop;
 
 public enum NumStrings {
-    six, twelve;
+    SIX, TWELVE;
 
     @Override
     public String toString() {
         return switch (this) {
-            case six -> "6";
-            case twelve -> "7";
+            case SIX -> "6";
+            case TWELVE -> "12"; // Corrected to return "12"
         };
-        }
+    }
 }

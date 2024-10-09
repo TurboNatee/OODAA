@@ -6,9 +6,8 @@ public enum Model {
     @Override
     public String toString() {
         return switch (this) {
-            case STRATOCASTOR -> "STRATOCASTOR";
-            case WARLOCK -> "WARLOCK";
-            default -> "STRATOCASTOR";
+            case STRATOCASTOR -> "Stratocaster"; // Capitalized for readability
+            case WARLOCK -> "Warlock"; // Capitalized for readability
         };
     }
 }

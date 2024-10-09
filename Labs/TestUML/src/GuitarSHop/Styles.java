@@ -5,10 +5,6 @@ public enum Styles {
 
     @Override
     public String toString() {
-        return switch (this)
-        {
-            case A -> "A";
-            case F -> "F";
-        };
+        return name(); // Returns the name of the enum constant
     }
 }

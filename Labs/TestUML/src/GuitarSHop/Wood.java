@@ -9,7 +9,6 @@ public enum Wood {
             case ALDER -> "Alder";
             case MAHOGANY -> "Mahogany";
             case CEDAR -> "Cedar";
-            default -> "Alder";
         };
     }
 }

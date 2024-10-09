@@ -3,40 +3,42 @@ package GuitarSHop;
 import java.util.List;
 
 public class FindGuitarTester {
-
     public static void main(String[] args) {
-        // set up guitar inventory
         Inventory inventory = new Inventory();
         initialiseInventory(inventory);
 
-        //what customer is looking for
-        InstrumentSpec whatLookingFor = new InstrumentSpec(Builder.FENDER, Model.STRATOCASTOR,
-                GuitarType.ELECTRIC, Wood.ALDER, Wood.ALDER) {
-        };
+        // Searching for guitars
+        InstrumentSpec whatLookingForGuitar = new InstrumentSpec(Builder.FENDER, Model.STRATOCASTOR,
+                GuitarType.ELECTRIC, Wood.ALDER, Wood.ALDER);
+        List<Instrument> matchingGuitars = inventory.search(whatLookingForGuitar);
+        listMatchingInstruments(matchingGuitars);
 
-        List matchingInstruments = inventory.search(whatLookingFor);
-        listMatchingGuitars(matchingInstruments);
-
-
+        // Searching for mandolins
+        MandolinSpec whatLookingForMandolin = new MandolinSpec(
+                Styles.F, Builder.GIBSON, Model.WARLOCK, GuitarType.ACOUSTIC,
+                Wood.MAHOGANY, Wood.CEDAR);
+        List<Instrument> matchingMandolins = inventory.search(whatLookingForMandolin);
+        listMatchingInstruments(matchingMandolins);
     }
 
-    public static void listMatchingGuitars(List matchingInstruments) {
+    public static void listMatchingInstruments(List<Instrument> matchingInstruments) {
         if (matchingInstruments.isEmpty()) {
             System.out.println("Sorry, we have nothing for you.");
         } else {
             System.out.println("You might like this: ");
-            for (Object matchingInstrument : matchingInstruments) {
-                Instrument instrument = (Instrument) matchingInstruments;
+            for (Instrument instrument : matchingInstruments) {
                 System.out.println(instrument.getSerialNumber() + " " + instrument.getPrice());
             }
         }
     }
 
     public static void initialiseInventory(Inventory inventory) {
-        //add guitars to the inventory
+        // Add guitars to the inventory
+        GuitarSpec guitarSpec = new GuitarSpec(Builder.FENDER, Model.STRATOCASTOR, GuitarType.ELECTRIC, Wood.ALDER, Wood.ALDER);
+        inventory.addGuitar("5517351", 1250, guitarSpec);
 
-        InstrumentSpec spec1 = new InstrumentSpec(Builder.FENDER, Model.STRATOCASTOR, GuitarType.ELECTRIC, Wood.ALDER, Wood.ALDER);
-
-        inventory.addInstrument("5517351", 1250, spec1);
+        // Add mandolins to the inventory
+        MandolinSpec mandolinSpec = new MandolinSpec(Styles.F, Builder.GIBSON, Model.WARLOCK, GuitarType.ACOUSTIC, Wood.MAHOGANY, Wood.CEDAR);
+        inventory.addMandolin("1234567", 800, mandolinSpec);
     }
 }

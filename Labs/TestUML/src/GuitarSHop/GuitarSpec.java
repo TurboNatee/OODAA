@@ -1,20 +1,9 @@
 package GuitarSHop;
 
-public class GuitarSpec {
-    private NumStrings numStrings;
+public class GuitarSpec extends InstrumentSpec {
+    // Additional fields for GuitarSpec if necessary
 
-
-    public NumStrings getNumStrings() {
-        return numStrings;
-    }
-
-
-    public boolean matches(GuitarSpec Spec) {
-
-
-        if (numStrings != Spec.numStrings) {
-            return false;
-        }
-        return true;
+    public GuitarSpec(Builder builder, Model model, GuitarType type, Wood backWood, Wood topWood) {
+        super(builder, model, type, backWood, topWood); // Call the parent constructor
     }
 }

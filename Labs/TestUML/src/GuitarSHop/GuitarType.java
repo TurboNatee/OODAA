@@ -8,7 +8,6 @@ public enum GuitarType {
         return switch (this) {
             case ELECTRIC -> "Electric";
             case ACOUSTIC -> "Acoustic";
-            default -> "Electric";
         };
     }
 }

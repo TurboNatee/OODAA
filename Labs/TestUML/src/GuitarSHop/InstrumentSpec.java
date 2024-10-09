@@ -35,26 +35,20 @@ public class InstrumentSpec {
         return topWood;
     }
 
-    public boolean matches(InstrumentSpec Spec) {
-        if (builder != Spec.builder) {
+    public boolean matches(InstrumentSpec spec) {
+        if (builder != spec.builder) {
             return false;
         }
-
-        if ((model != null) && (!model.equals("")) && (!model.equals(Spec.model))) {
+        if ((model != null) && !model.equals(spec.model)) {
             return false;
         }
-
-        if (type != Spec.type) {
+        if (type != spec.type) {
             return false;
         }
-
-
-        if (backWood != Spec.backWood) {
+        if (backWood != spec.backWood) {
             return false;
         }
-
-
-        if (topWood != Spec.topWood) {
+        if (topWood != spec.topWood) {
             return false;
         }
         return true;

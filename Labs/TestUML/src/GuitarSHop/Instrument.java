@@ -1,24 +1,23 @@
 package GuitarSHop;
 
 public class Instrument {
+    private String serialNumber;
+    private double price;
+    private InstrumentSpec instrumentSpec; // Use the base InstrumentSpec
 
-        private String serialNumber;
-        private double price;
-        private InstrumentSpec instrumentSpec;
-
-    public static void main(String[] args) {
-        Instrument instrument = new Instrument();
+    // Constructor
+    public Instrument(String serialNumber, double price, InstrumentSpec instrumentSpec) {
+        this.serialNumber = serialNumber;
+        this.price = price;
+        this.instrumentSpec = instrumentSpec;
     }
+
     public String getSerialNumber() {
         return serialNumber;
     }
 
-    public  double getPrice() {
+    public double getPrice() {
         return price;
-    }
-
-    public void setPrice(double price) {
-        this.price = price;
     }
 
     public InstrumentSpec getInstrumentSpec() {

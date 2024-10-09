@@ -9,7 +9,6 @@ public enum Builder {
             case FENDER -> "Fender";
             case GIBSON -> "Gibson";
             case COLLINS -> "Collins";
-            default -> "Fender";
         };
     }
 }
